@@ -1,0 +1,118 @@
+<div class="wrapper">
+  <div id="formContent">
+
+    <div>
+      <img src="/assets/img/books.png" id="icon" alt="Books Icon" height="150">
+    </div>
+
+    <form #books="ngForm" (ngSubmit)="books.valid && onSubmit(books)">
+
+      <input type="text" #name="ngModel" [(ngModel)]="booksService.selectedBooks.name" name="name" placeholder="Name"
+        required [ngClass]="{'invalid-textbox' :books.submitted && !name.valid }">
+      <div *ngIf="books.submitted && !name.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      <br>
+
+      <input type="text" #author="ngModel" [(ngModel)]="booksService.selectedBooks.author" name="author"
+        placeholder="Author" required [ngClass]="{'invalid-textbox' :books.submitted && !author.valid }">
+      <div *ngIf="books.submitted && author.errors">
+        <label class="validation-message">This field is required.</label>
+      </div>
+
+      <input type="text" #bookno="ngModel" [(ngModel)]="booksService.selectedBooks.bookno" name="bookno"
+        placeholder="Book Number" required [ngClass]="{'invalid-textbox' :books.submitted && !bookno.valid }">
+      <div *ngIf="books.submitted && !bookno.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      <br>
+
+      <input type="text" #noofpages="ngModel" [(ngModel)]="booksService.selectedBooks.noofpages" name="noofpages"
+        placeholder="Number of pages" required [ngClass]="{'invalid-textbox' :books.submitted && !noofpages.valid }">
+      <div *ngIf="books.submitted && noofpages.errors">
+        <label class="validation-message">This field is required.</label>
+      </div>
+
+      <input type="text" #edition="ngModel" [(ngModel)]="booksService.selectedBooks.edition" name="edition"
+        placeholder="Edition" required [ngClass]="{'invalid-textbox' :books.submitted && !edition.valid }">
+      <div *ngIf="books.submitted && !edition.valid">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      <br>
+
+      <input type="text" #publishedby="ngModel" [(ngModel)]="booksService.selectedBooks.publishedby" name="publishedby"
+        placeholder="Published by" required [ngClass]="{'invalid-textbox' :books.submitted && !publishedby.valid }">
+      <div *ngIf="books.submitted && publishedby.errors">
+        <label class="validation-message">This field is required.</label>
+      </div>
+
+      <input type="text" #quantity="ngModel" [(ngModel)]="booksService.selectedBooks.quantity" name="quantity"
+        placeholder="Quantity" required [ngClass]="{'invalid-textbox' :books.submitted && !quantity.valid }">
+      <div *ngIf="books.submitted && quantity.errors">
+        <label class="validation-message">This field is required.</label>
+      </div>
+      <input type="submit" value="Sign Up">
+    </form>
+    <!-- Success message -->
+    <div class="success" *ngIf="showSucessMessage">
+      Saved successfully
+    </div>
+
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>
+
+    <form>
+      <input type="submit" value="Back" (click)="Back()">
+    </form>
+
+  </div>
+</div>
+
+<!-- 
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="background-color: #56baed;">
+  <br>
+  <br>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Book Number</th>
+            <th>No of pages</th>
+            <th>Edition</th>
+            <th>Published by</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let b of booksService.books">
+            <td>{{b.name}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.bookno}}</td>
+            <td>{{b.noofpages}}</td>
+            <td>{{b.edition}}</td>
+            <td>{{b.publishedby}}</td>
+            <td>{{b.quantity}}</td>
+            <td>
+              <a class="action-btn" (click)="onDelete(b._id,books)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input style="display:block; margin-left: auto; margin-right: auto;background-color: rgba(0, 0, 0, 0.404);"
+        type="submit" value="Back" (click)="Back()">
+    </div>
+  </div>
+</div> -->
+
+

@@ -1,0 +1,48 @@
+<html style="background-color: #56baed;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div style="background-color: #56baed;">
+  <br>
+  <br>
+  <form #books="ngForm">
+  </form>
+  <div class="container" >
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Book Number</th>
+            <th>No of pages</th>
+            <th>Edition</th>
+            <th>Published by</th>
+            <th>Quantity</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor=" let b of booksService.books">
+            <td>{{b.name}}</td>
+            <td>{{b.author}}</td>
+            <td>{{b.bookno}}</td>
+            <td>{{b.noofpages}}</td>
+            <td>{{b.edition}}</td>
+            <td>{{b.publishedby}}</td>
+            <td>{{b.quantity}}</td>
+            <td>
+              <a class="action-btn" (click)="onDelete(b._id,books)">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <input style="display:block; margin-left: auto; margin-right: auto;background-color: rgba(0, 0, 0, 0.404);"
+        type="submit" value="Back" (click)="Back()">
+    </div>
+  </div>
+</div>
+</html>
