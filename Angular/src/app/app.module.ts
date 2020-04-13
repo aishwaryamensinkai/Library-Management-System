@@ -26,6 +26,8 @@ import { ViewstudentsComponent } from "./viewstudents/viewstudents.component";
 import { ViewbooksinstudentsComponent } from "./viewbooksinstudents/viewbooksinstudents.component";
 import { DeletebookComponent } from "./books/deletebook/deletebook.component";
 import { AddbookComponent } from './books/addbook/addbook.component';
+import { FeedbackComponent } from './feedback/feedback.component';
+import { ViewfeedbackComponent } from './viewfeedback/viewfeedback.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { AddbookComponent } from './books/addbook/addbook.component';
     ViewbooksinstudentsComponent,
     DeletebookComponent,
     AddbookComponent,
+    FeedbackComponent,
+    ViewfeedbackComponent,
   ],
   imports: [
     BrowserModule,

@@ -2,19 +2,23 @@ const mongoose = require("mongoose");
 const passport = require("passport");
 const _ = require("lodash");
 
-const Student = mongoose.model("Student");
+const Feedback = mongoose.model("Feedback");
 
-module.exports.sregister = (req, res, next) => {
-  var student = new Student({
+module.exports.fregister = (req, res, next) => {
+  var feedback = new Feedback({
     fullName: req.body.fullName,
     usn: req.body.usn,
     branch: req.body.branch,
-    gender: req.body.gender,
     email: req.body.email,
-    password: req.body.password,
+    fb:req.body.fb,
   });
-  student.save((err, doc) => {
+  feedback.save((err, doc) => {
     if (!err) res.send(doc);
+    //else {
+    //   console.log(
+    //     "Error in Employee Save :" + JSON.stringify(err, undefined, 2)
+    //   );
+    // }
     else {
       if (err.code == 11000)
         res.status(422).send(["Duplicate Email or USN found."]);
@@ -23,13 +27,13 @@ module.exports.sregister = (req, res, next) => {
   });
 };
 
-module.exports.studentProfile = (req, res, next) => {
-  Student.find((err, docs) => {
+module.exports.feedbackProfile = (req, res, next) => {
+  Feedback.find((err, docs) => {
     if (!err) {
       res.send(docs);
     } else {
       console.log(
-        "Error in Retriving Students :" + JSON.stringify(err, undefined, 2)
+        "Error in Retriving feedback :" + JSON.stringify(err, undefined, 2)
       );
     }
   });

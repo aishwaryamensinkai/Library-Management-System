@@ -18,8 +18,8 @@ export class PageComponent implements OnInit {
   viewbooks() {
     this.router.navigate(["/viewbooksinstudents"]);
   }
-  updatestudent(){
-    this.router.navigate(['/#']);
+  feedback(){
+    this.router.navigate(["/feedback"]);
   }
   back() {
     this.router.navigate(["/firstpage"]);

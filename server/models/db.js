@@ -18,3 +18,4 @@ module.exports = mongoose;
 require("./user.model");
 require("./student.model");
 require("./books.model");
+require("./feedback.model");

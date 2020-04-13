@@ -12,8 +12,10 @@ import { BooksComponent } from "./books/books.component";
 import { ViewbooksComponent } from "./viewbooks/viewbooks.component";
 import { ViewstudentsComponent } from "./viewstudents/viewstudents.component";
 import { ViewbooksinstudentsComponent } from "./viewbooksinstudents/viewbooksinstudents.component";
-import { DeletebookComponent } from './books/deletebook/deletebook.component';
-import { AddbookComponent } from './books/addbook/addbook.component';
+import { DeletebookComponent } from "./books/deletebook/deletebook.component";
+import { AddbookComponent } from "./books/addbook/addbook.component";
+import { FeedbackComponent } from "./feedback/feedback.component";
+import { ViewfeedbackComponent } from './viewfeedback/viewfeedback.component';
 export const appRoutes: Routes = [
   {
     path: "signup",
@@ -71,6 +73,15 @@ export const appRoutes: Routes = [
     path: "books",
     component: BooksComponent,
     children: [{ path: "", component: AddbookComponent }],
+    canActivate: [AuthGuard],
+  },
+  {
+    path: "feedback",
+    component: FeedbackComponent,
+  },
+  {
+    path: "viewfeedback",
+    component: ViewfeedbackComponent,
     canActivate: [AuthGuard],
   },
   {

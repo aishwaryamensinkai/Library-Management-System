@@ -9,8 +9,7 @@ import { UserService } from "../shared/user.service";
   styleUrls: ["./function.component.css"],
 })
 export class FunctionComponent implements OnInit {
-
-  constructor(private userService: UserService,private router: Router) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -20,22 +19,22 @@ export class FunctionComponent implements OnInit {
   addbooks() {
     this.router.navigate(["/books"]);
   }
-  deletebook(){
+  deletebook() {
     this.router.navigate(["/deletebooks"]);
   }
-  updatebooks(){
-    this.router.navigate(["/vud"]);
+  viewfeedback() {
+    this.router.navigate(["/viewfeedback"]);
   }
   viewbooks() {
     this.router.navigate(["/viewbooks"]);
   }
-  viewstudent(){
+  viewstudent() {
     this.router.navigate(["/viewstudents"]);
   }
-  deletestudent(){
+  deletestudent() {
     this.router.navigate(["#"]);
   }
-  logout(){
+  logout() {
     this.userService.deleteToken();
     this.router.navigate(["/login"]);
   }

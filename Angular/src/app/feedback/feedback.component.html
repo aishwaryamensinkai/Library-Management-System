@@ -1,0 +1,60 @@
+<div class="wrapper">
+    <div id="formContent">
+        <div>
+            <img src="/assets/img/feedback1.jpg" id="icon" alt="Feedback Icon" width="30" height="170">
+        </div>
+
+        <form #feedback="ngForm" (ngSubmit)="feedback.valid && onSubmit(feedback)">
+
+            <input type="text" #fullName="ngModel" [(ngModel)]="feedbackService.selectedFeedback.fullName" name="fullName"
+                placeholder="Full Name" required [ngClass]="{'invalid-textbox' :feedback.submitted && !fullName.valid }">
+            <div *ngIf="feedback.submitted && !fullName.valid">
+                <label class="validation-message">This field is required.</label>
+            </div>
+            <br>
+
+            <input type="text" #usn="ngModel" [(ngModel)]="feedbackService.selectedFeedback.usn" name="usn"
+                placeholder="USN" required [pattern]="usnRegex"
+                [ngClass]="{'invalid-textbox' :feedback.submitted && !usn.valid }">
+            <div *ngIf="feedback.submitted && usn.errors">
+                <label *ngIf="usn.errors.required" class="validation-message">This field is required.</label>
+                <label *ngIf="usn.errors.pattern" class="validation-message">Invalid usn.</label>
+            </div>
+
+            <input type="text" #branch="ngModel" [(ngModel)]="feedbackService.selectedFeedback.branch" name="branch"
+                placeholder="Branch" required [ngClass]="{'invalid-textbox' :feedback.submitted && !branch.valid }">
+            <div *ngIf="feedback.submitted && !branch.valid">
+                <label class="validation-message">This field is required.</label>
+            </div>
+
+            <input type="text" #email="ngModel" [(ngModel)]="feedbackService.selectedFeedback.email" name="email"
+                placeholder="Email" required [pattern]="emailRegex"
+                [ngClass]="{'invalid-textbox' :feedback.submitted && !email.valid }">
+            <div *ngIf="feedback.submitted && email.errors">
+                <label *ngIf="email.errors.required" class="validation-message">This field is required.</label>
+                <label *ngIf="email.errors.pattern" class="validation-message">Invalid email address.</label>
+            </div>
+
+            <input type="text" #fb="ngModel" [(ngModel)]="feedbackService.selectedFeedback.fb"
+                name="fb" placeholder="Feedback" minlength="4" required
+                [ngClass]="{'invalid-textbox' :feedback.submitted && !fb.valid }">
+            <div *ngIf="feedback.submitted && fb.errors">
+                <label *ngIf="fb.errors.required" class="validation-message">This field is required.</label>
+            </div>
+
+            <input type="submit" value="Sign Up">
+        </form>
+
+        <!-- Success message -->
+        <div class="success" *ngIf="showSucessMessage">
+            Saved successfully
+        </div>
+
+        <!-- Error message -->
+        <div class="alert" *ngIf="serverErrorMessages">
+            {{serverErrorMessages}}
+        </div>
+
+        <input type="submit" value="Back" (click)="Back()">
+    </div>
+</div>

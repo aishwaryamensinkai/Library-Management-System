@@ -6,6 +6,8 @@
 |   |  |  |--addbooks.component.ts|.html|.css
 |   |  +--● deletebooks
 |   |  |  |--deletebooks.component.ts|.html|.css
+|   +--● feedback
+|   |  |--feedback.component.ts|.html|.css
 |   +--● firstPage
 |   |  |--firstPage.component.ts|.html|.css
 |   +--● function
@@ -26,12 +28,16 @@
 |   |  |--viewbooks.component.ts|.html|.css
 |   +--● viewbooksinstudents
 |   |  |--viewbooksinstudents.component.ts|.html|.css
-|   +--● viewstudents
+|   +--● viewfeedback
+|   |  |--viewstudents.component.ts|.html|.css
+|   +--● viewfeedback
 |   |  |--viewstudents.component.ts|.html|.css
 |   |  
 |   |--● shared
 |   |  |--books.service.ts
 |   |  |--books.model.ts
+|   |  |--feedback.service.ts
+|   |  |--feedback.model.ts
 |   |  |--user.service.ts
 |   |  |--user.model.ts
 |   |  |--student.service.ts
