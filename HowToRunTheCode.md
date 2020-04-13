@@ -12,3 +12,4 @@ Install Nodemon as nodemon is a tool that helps develop node.js based applicatio
 
 Run `npm install -g nodemon`
 
+Then Run `nodemon app.js`
