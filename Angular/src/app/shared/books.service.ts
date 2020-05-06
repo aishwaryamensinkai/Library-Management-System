@@ -9,6 +9,7 @@ import { Books } from "./books.model";
 export class BooksService {
   books: Books[];
   selectedBooks: Books = {
+    _id: "",
     name: "",
     author: "",
     bookno: null,
@@ -24,6 +25,7 @@ export class BooksService {
 
   //HttpMethods
   readonly baseURL = "http://localhost:3000/api/deleteBook";
+  readonly baseURL1 = "http://localhost:3000/api/update";
 
   postBooks(books: Books) {
     return this.http.post(
@@ -37,9 +39,9 @@ export class BooksService {
     return this.http.get(environment.apiBaseUrl + "/booksProfile");
   }
 
-  // updatebooks(b: Books) {
-  //   return this.http.put(this.baseURL, `/${b._id}`);
-  // }
+  updatebooks(b: Books) {
+    return this.http.put(this.baseURL1 + `/${b._id}`, b);
+  }
 
   deleteBook(_id: string) {
     return this.http.delete(this.baseURL + `/${_id}`);

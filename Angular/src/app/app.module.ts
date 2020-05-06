@@ -28,6 +28,7 @@ import { DeletebookComponent } from "./books/deletebook/deletebook.component";
 import { AddbookComponent } from './books/addbook/addbook.component';
 import { FeedbackComponent } from './feedback/feedback.component';
 import { ViewfeedbackComponent } from './viewfeedback/viewfeedback.component';
+import { UpdatebookComponent } from './books/updatebook/updatebook.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { ViewfeedbackComponent } from './viewfeedback/viewfeedback.component';
     AddbookComponent,
     FeedbackComponent,
     ViewfeedbackComponent,
+    UpdatebookComponent,
   ],
   imports: [
     BrowserModule,

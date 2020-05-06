@@ -31,6 +31,7 @@ export class DeletebookComponent implements OnInit {
   }
   resetForm(form: NgForm) {
     this.booksService.selectedBooks = {
+      _id: "",
       name: "",
       author: "",
       bookno: null,

@@ -17,6 +17,7 @@ router.get("/studentProfile", ctrlStudent.studentProfile);
 
 router.post("/bregister", ctrlBooks.bregister);
 router.get("/booksProfile", ctrlBooks.booksProfile);
+router.put("/update/:id", ctrlBooks.update);
 router.delete("/deleteBook/:id", ctrlBooks.deleteBook);
 
 router.post("/fregister", ctrlFeedback.fregister);

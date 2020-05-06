@@ -28,6 +28,9 @@ export class FunctionComponent implements OnInit {
   viewbooks() {
     this.router.navigate(["/viewbooks"]);
   }
+  updatebook() {
+    this.router.navigate(["/updatebooks"]);
+  }
   viewstudent() {
     this.router.navigate(["/viewstudents"]);
   }

@@ -43,6 +43,7 @@ export class AddbookComponent implements OnInit {
 
   resetForm(form: NgForm) {
     this.booksService.selectedBooks = {
+      _id: "",
       name: "",
       author: "",
       bookno: null,
@@ -57,16 +58,4 @@ export class AddbookComponent implements OnInit {
   Back() {
     this.router.navigate(["/function"]);
   }
-
-  // onEdit(b) {}
-
-  // onDelete(_id: string, form: NgForm) {
-  //   if (confirm("Are you sure to delete this record ?") == true) {
-  //     this.booksService.deleteBook(_id).subscribe((res) => {
-  //       this.refreshBooksList();
-  //       this.resetForm(form);
-  //       M.toast({ html: "Deleted successfully", classes: "rounded" });
-  //     });
-  //   }
-  // }
 }

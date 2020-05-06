@@ -1,5 +1,6 @@
 export class Books {
   [x: string]: any;
+  _id:string;
   name: string;
   author: string;
   bookno: Number;

@@ -46,6 +46,36 @@ module.exports.booksProfile = (req, res, next) => {
   });
 };
 
+module.exports.update = (req, res) => {
+  if (!ObjectId.isValid(req.params.id))
+    return res.status(400).send(`No record with given id : ${req.params.id}`);
+
+  var books = {
+    name: req.body.name,
+    author: req.body.author,
+    bookno: req.body.bookno,
+    noofpages: req.body.noofpages,
+    edition: req.body.edition,
+    publishedby: req.body.publishedby,
+    quantity: req.body.quantity,
+  };
+
+  Books.findByIdAndUpdate(
+    req.params.id,
+    { $set: books },
+    { new: true },
+    (err, doc) => {
+      if (!err) {
+        res.send(doc);
+      } else {
+        console.log(
+          "Error in Books Update :" + JSON.stringify(err, undefined, 2)
+        );
+      }
+    }
+  );
+};
+
 module.exports.deleteBook = (req, res) => {
   if (!ObjectId.isValid(req.params.id))
     return res.status(400).send(`No record with given id : ${req.params.id}`);

@@ -6,6 +6,8 @@
 |   |  |  |--addbooks.component.ts|.html|.css
 |   |  +--● deletebooks
 |   |  |  |--deletebooks.component.ts|.html|.css
+|   |  +--● updatebooks
+|   |  |  |--updatebooks.component.ts|.html|.css
 |   +--● feedback
 |   |  |--feedback.component.ts|.html|.css
 |   +--● firstPage
@@ -29,8 +31,8 @@
 |   +--● viewbooksinstudents
 |   |  |--viewbooksinstudents.component.ts|.html|.css
 |   +--● viewfeedback
-|   |  |--viewstudents.component.ts|.html|.css
-|   +--● viewfeedback
+|   |  |--viewfeedback.component.ts|.html|.css
+|   +--● viewstudents
 |   |  |--viewstudents.component.ts|.html|.css
 |   |  
 |   |--● shared
